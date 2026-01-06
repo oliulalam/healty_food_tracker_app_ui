@@ -1,8 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:healty_food_tracker_app/widgets/radial_painter.dart'; // আপনার ফোল্ডার স্ট্রাকচার অনুযায়ী ইমপোর্ট
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final List<Map<String, String>> listImageDetails = [
+    {
+      'image': 'assets/images/one.jpeg',
+      'title': 'Hamburger',
+      'kcol': '654 Kcol',
+      'stock': '90',
+    },
+
+    {
+      'image': 'assets/images/twoo.jpg',
+      'title': 'Cheeseburger',
+      'kcol': '453 Kcol',
+      'stock': '33',
+    },
+
+    {
+      'image': 'assets/images/three.jpeg',
+      'title': 'Sandwich',
+      'kcol': '225 Kcol',
+      'stock': '89',
+    },
+
+    {
+      'image': 'assets/images/four.jpeg',
+      'title': 'Milkshake',
+      'kcol': '234 Kcol',
+      'stock': '7',
+    },
+
+    {
+      'image': 'assets/images/five.jpeg',
+      'title': 'Muffin',
+      'kcol': '987 Kcol',
+      'stock': '67',
+    },
+
+    {
+      'image': 'assets/images/six.jpeg',
+      'title': 'Burrito',
+      'kcol': '245 Kcol',
+      'stock': '21',
+    },
+
+    {
+      'image': 'assets/images/seven.jpeg',
+      'title': 'Hot dog',
+      'kcol': '1235 Kcol',
+      'stock': '11',
+    },
+
+    {
+      'image': 'assets/images/eight.jpeg',
+      'title': 'Fried chicken',
+      'kcol': '345 Kcol',
+      'stock': '43',
+    },
+
+    {
+      'image': 'assets/images/nine.jpeg',
+      'title': 'Donuts',
+      'kcol': '123 Kcol',
+      'stock': '32',
+    },
+
+    {
+      'image': 'assets/images/ten.jpeg',
+      'title': 'Onion ring',
+      'kcol': '2345 Kcol',
+      'stock': '12',
+    },
+  ];
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -340,28 +418,27 @@ class HomePage extends StatelessWidget {
 
                     Expanded(
                       child: GridView.builder(
-                        padding: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(10),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 16,
-                          childAspectRatio: 0.75,
+                          crossAxisSpacing: 7,
+                          mainAxisSpacing: 7,
+                          childAspectRatio: 0.76,
                         ),
 
-                        itemCount: 10,
+                        itemCount: listImageDetails.length,
                         itemBuilder: (context, index) {
+                          final list = listImageDetails[index];
                           return Stack(
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
-                                  height: 300,
-                                  width: 300,
+                                  height: 250,
+                                  width: 320,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/images/one.jpeg',
-                                      ),
+                                      image: AssetImage(list['image']!),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -369,8 +446,8 @@ class HomePage extends StatelessWidget {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 18.0,
-                                          top: 18.0,
+                                          left: 10.0,
+                                          top: 10.0,
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -406,20 +483,20 @@ class HomePage extends StatelessWidget {
                                               left: 30.0,
                                             ),
                                             child: Text(
-                                              "Salman with herb & abd Garlic and  lemon blue",
+                                              list['title']!,
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
                                                 color: Colors.white,
-                                                fontSize: 30,
-                                                fontWeight: FontWeight.w700,
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                             ),
                                           ),
 
                                           Container(
                                             height: 40,
-                                            width: 120,
+                                            width: 130,
                                             decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
@@ -428,15 +505,15 @@ class HomePage extends StatelessWidget {
                                             child: Center(
                                               child: Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     Icons.local_fire_department,
                                                     color: Colors.amber,
                                                   ),
+                                                  SizedBox(width: 3),
                                                   Text(
-                                                    "273Kcol",
+                                                    list['kcol']!,
                                                     style: TextStyle(
                                                       fontSize: 20,
                                                     ),
@@ -447,7 +524,9 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ],
                                       ),
+
                                       Spacer(),
+
                                       Padding(
                                         padding: const EdgeInsets.only(
                                           left: 10.0,
@@ -458,8 +537,8 @@ class HomePage extends StatelessWidget {
                                               MainAxisAlignment.start,
                                           children: [
                                             Container(
-                                              height: 40,
-                                              width: 70,
+                                              height: 45,
+                                              width: 85,
                                               decoration: BoxDecoration(
                                                 color: Colors.black87,
                                                 borderRadius:
@@ -475,9 +554,9 @@ class HomePage extends StatelessWidget {
                                                         Colors.green.shade300,
                                                     size: 30,
                                                   ),
-                                                  SizedBox(width: 5),
+                                                  SizedBox(width: 8),
                                                   Text(
-                                                    "3",
+                                                    list['stock']!,
                                                     style: TextStyle(
                                                       fontSize: 22,
                                                       color: Colors.white,
@@ -506,6 +585,109 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+
+      bottomNavigationBar: SizedBox(
+        height: 60, // পুরো নেভিগেশন এরিয়ার উচ্চতা
+        child: Stack(
+          clipBehavior: Clip.none, // বাটন যাতে বারের বাইরে দেখা যায়
+          alignment: Alignment.bottomCenter,
+          children: [
+            // ১. সাদা রাউন্ডেড বার
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(10),
+                topLeft: Radius.circular(10),
+              ),
+              child: Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    // আইকন ১: হোম
+                    IconButton(
+                      icon: Icon(
+                        Icons.home_filled,
+                        color: _selectedIndex == 0 ? Colors.black : Colors.grey,
+                        size: 28,
+                      ),
+                      onPressed: () => setState(() => _selectedIndex = 0),
+                    ),
+
+                    // আইকন ২: হার্ট
+                    IconButton(
+                      icon: Icon(
+                        Icons.favorite_border,
+                        color: _selectedIndex == 1 ? Colors.black : Colors.grey,
+                        size: 28,
+                      ),
+                      onPressed: () => setState(() => _selectedIndex = 1),
+                    ),
+
+                    // মাঝখানের ফাঁকা জায়গা (যেখানে বাটন বসবে)
+                    const SizedBox(width: 40),
+
+                    // আইকন ৩: বই
+                    IconButton(
+                      icon: Icon(
+                        Icons.menu_book_outlined,
+                        color: _selectedIndex == 2 ? Colors.black : Colors.grey,
+                        size: 28,
+                      ),
+                      onPressed: () => setState(() => _selectedIndex = 2),
+                    ),
+
+                    // আইকন ৪: প্রোফাইল
+                    IconButton(
+                      icon: Icon(
+                        Icons.person_outline,
+                        color: _selectedIndex == 3 ? Colors.black : Colors.grey,
+                        size: 28,
+                      ),
+                      onPressed: () => setState(() => _selectedIndex = 3),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            // ২. মাঝখানের ফ্লোটিং বাটন (গোলাপি)
+            Positioned(
+              bottom: 19, // বার থেকে উপরে উঠানো হলো
+              child: GestureDetector(
+                onTap: () {
+                  print("Plus Button Clicked");
+                },
+                child: Container(
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFF75A0), // গোলাপি রং
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFFFF75A0).withOpacity(0.5),
+                        blurRadius: 10,
+                        offset: const Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(Icons.add, color: Colors.white, size: 32),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
