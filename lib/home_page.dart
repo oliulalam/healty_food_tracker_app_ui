@@ -7,9 +7,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFA1ABD1),
+      backgroundColor: const Color(0xFFD1CEF8),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFA1ABD1),
+        backgroundColor: const Color(0xFFD1CEF8),
         elevation: 0, // শ্যাডো রিমুভ করলাম যাতে ক্লিন দেখায়
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,23 +45,16 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            Container(
-              height: 240,
+      body: Column(
+        children: [
+          SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 5),
+            child: Container(
+              height: 210,
               decoration: BoxDecoration(
                 color: const Color(0xFF847AFF),
                 borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.deepPurple.withOpacity(0.7),
-                    blurRadius: 15,
-                    offset: Offset(0, 10),
-                  ),
-                ],
               ),
               child: Row(
                 children: [
@@ -118,65 +111,401 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          // ----- ১. Proteins -----
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text("Proteins",
-                                      style: TextStyle(
-                                          color: Colors.white70, fontSize: 14)),
+                                  const Text(
+                                    "Proteins",
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 14,
+                                    ),
+                                  ),
                                   RichText(
                                     text: const TextSpan(
                                       children: [
                                         TextSpan(
-                                            text: "5 ",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 16)),
+                                          text: "5 ",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
                                         TextSpan(
-                                            text: "/79g",
-                                            style: TextStyle(
-                                                color: Colors.white60,
-                                                fontSize: 14)),
+                                          text: "/79g",
+                                          style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 14,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(height: 6),
-                                  Stack(
-                                    children: [
-                                      Container(
-                                        height: 6,
-                                        decoration: BoxDecoration(
-                                          color: Colors.black12,
-                                          borderRadius: BorderRadius.circular(10),
-                                        ),
+                                ],
+                              ),
+                              const SizedBox(height: 7),
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 7,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  FractionallySizedBox(
+                                    widthFactor: 5 / 79,
+                                    child: Container(
+                                      height: 7,
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFFFF9B9B),
+                                        borderRadius: BorderRadius.circular(10),
                                       ),
-                                      FractionallySizedBox(
-                                        widthFactor: 5 / 79,
-                                        child: Container(
-                                          height: 6,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xFFFF9B9B),
-                                            borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+
+                          // ----- ২. Carbs -----
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Carbs",
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "20",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  )
+                                        TextSpan(
+                                          text: "/196g",
+                                          style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ],
-                              )
+                              ),
+                              SizedBox(height: 7),
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 7,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  FractionallySizedBox(
+                                    widthFactor: 20 / 196,
+                                    child: Container(
+                                      height: 7,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFCFFF98),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
-                          )
+                          ),
+
+                          // ----- ৩. Carbs -----
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Fat",
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "2",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: '/52g',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.white70,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 7),
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 7,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black12,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  FractionallySizedBox(
+                                    widthFactor: 2 / 52,
+                                    child: Container(
+                                      height: 7,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFFFBC6D),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 20),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24),
+                topRight: Radius.circular(24),
+              ),
+              child: Container(
+                color: Colors.white,
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20.0,
+                        right: 20.0,
+                        top: 15,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "My Journal",
+                            style: TextStyle(
+                              fontSize: 27,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          Icon(Icons.drag_handle_outlined, size: 50),
+                        ],
+                      ),
+                    ),
+
+                    Expanded(
+                      child: GridView.builder(
+                        padding: const EdgeInsets.all(16),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 16,
+                          childAspectRatio: 0.75,
+                        ),
+
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return Stack(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                  height: 300,
+                                  width: 300,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        'assets/images/one.jpeg',
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 18.0,
+                                          top: 18.0,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Center(
+                                              child: Container(
+                                                height: 35,
+                                                width: 35,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.amber,
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                child: Icon(
+                                                  Icons.local_fire_department,
+                                                  size: 28,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height: 30),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              right: 30.0,
+                                              left: 30.0,
+                                            ),
+                                            child: Text(
+                                              "Salman with herb & abd Garlic and  lemon blue",
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                          ),
+
+                                          Container(
+                                            height: 40,
+                                            width: 120,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Center(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Icon(
+                                                    Icons.local_fire_department,
+                                                    color: Colors.amber,
+                                                  ),
+                                                  Text(
+                                                    "273Kcol",
+                                                    style: TextStyle(
+                                                      fontSize: 20,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Spacer(),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 10.0,
+                                          bottom: 10.0,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              height: 40,
+                                              width: 70,
+                                              decoration: BoxDecoration(
+                                                color: Colors.black87,
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.ramen_dining,
+                                                    color:
+                                                        Colors.green.shade300,
+                                                    size: 30,
+                                                  ),
+                                                  SizedBox(width: 5),
+                                                  Text(
+                                                    "3",
+                                                    style: TextStyle(
+                                                      fontSize: 22,
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
