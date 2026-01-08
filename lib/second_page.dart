@@ -293,29 +293,31 @@ class _SecondPageState extends State<SecondPage> {
             ),
 
             Positioned(
-              top: 50,
-              left: 20,
-              right: 20,
+              top: 55,
+              left: 15,
+              right: 15,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(22),
                     ),
-                    child: Icon(Icons.chevron_left),
+                    child: Icon(Icons.chevron_left, size: 40,),
                   ),
 
                   Container(
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(22),
                     ),
-                    child: Icon(Icons.bookmark_added_outlined),
+                    child: Icon(Icons.bookmark_add_outlined, size: 30,),
                   ),
-
-
 
                 ],
               ),
