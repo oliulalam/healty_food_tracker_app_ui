@@ -119,15 +119,20 @@ class ThirdPage extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  // First Layout
+
+                  // ---------- TAB 1 ----------
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Breakfast",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: Text(
+                          "Breakfast",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       SizedBox(height: 10),
@@ -145,7 +150,7 @@ class ThirdPage extends StatelessWidget {
                                 children: [
                                   Container(
                                     height: 270,
-                                    width: 200,
+                                    width: 175,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEBDDDCFF),
                                       borderRadius: BorderRadius.circular(20),
@@ -163,7 +168,7 @@ class ThirdPage extends StatelessWidget {
                                           children: [
                                             Container(
                                               height: 160,
-                                              width: 200,
+                                              width: 175,
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                   image: AssetImage(
@@ -263,12 +268,7 @@ class ThirdPage extends StatelessWidget {
                                         ),
 
                                         Padding(
-                                          padding: const EdgeInsets.only(
-                                            left: 10.0,
-                                            top: 7,
-                                            right: 10,
-                                            bottom: 7,
-                                          ),
+                                          padding: const EdgeInsets.all(12),
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -326,19 +326,39 @@ class ThirdPage extends StatelessWidget {
                                       ],
                                     ),
                                   ), // main container
+
+
+
                                 ],
                               ),
                             );
                           },
                         ),
                       ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0, left: 15),
+                        child: Text("Lunch", style: TextStyle(fontSize: 25, f),),
+                      )
                     ],
+                  ),//TabBarView Column
+
+
+                  // ---------- TAB 2 ----------
+                  Center(
+                    child: Text(
+                      "All Recipes",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
           ],
-        ),
+        ), //Top Column
       ),
     );
   }
