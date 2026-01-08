@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healty_food_tracker_app/second_page.dart';
+import 'package:healty_food_tracker_app/third_page.dart';
 
 class FoodTrackerApp extends StatelessWidget {
   const FoodTrackerApp({super.key});
@@ -8,7 +9,7 @@ class FoodTrackerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SecondPage(),
+      home: ThaedPage(),
     );
   }
 }
