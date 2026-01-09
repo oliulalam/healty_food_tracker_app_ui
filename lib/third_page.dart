@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:healty_food_tracker_app/widgets/bottom_navigation.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});
@@ -338,7 +339,7 @@ class ThirdPage extends StatelessWidget {
 
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0, left: 15),
-                        child: Text("Lunch", style: TextStyle(fontSize: 25, f),),
+                        child: Text("Lunch", style: TextStyle(fontSize: 25,),),
                       )
                     ],
                   ),//TabBarView Column
@@ -359,6 +360,9 @@ class ThirdPage extends StatelessWidget {
             ),
           ],
         ), //Top Column
+
+        bottomNavigationBar: MyBottomNavigation(),
+
       ),
     );
   }
