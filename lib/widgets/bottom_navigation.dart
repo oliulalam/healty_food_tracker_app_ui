@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:healty_food_tracker_app/home_page.dart';
+import 'package:healty_food_tracker_app/second_page.dart';
+import 'package:healty_food_tracker_app/third_page.dart';
+
 class MyBottomNavigation extends StatefulWidget {
   const MyBottomNavigation({super.key});
 
@@ -45,7 +49,14 @@ class _MyBottomNavigationState extends State<MyBottomNavigation> {
                       color: _selectedIndex == 0 ? Colors.black : Colors.grey,
                       size: 28,
                     ),
-                    onPressed: () => setState(() => _selectedIndex = 0),
+                    onPressed: () {
+                      setState(() => _selectedIndex = 0);
+
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
                   ),
 
                   // আইকন ২: হার্ট
@@ -55,7 +66,14 @@ class _MyBottomNavigationState extends State<MyBottomNavigation> {
                       color: _selectedIndex == 1 ? Colors.black : Colors.grey,
                       size: 28,
                     ),
-                    onPressed: () => setState(() => _selectedIndex = 1),
+                    onPressed: (){
+                      setState(() => _selectedIndex = 2);
+
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => SecondPage()),
+                      );
+                    },
                   ),
 
                   // মাঝখানের ফাঁকা জায়গা (যেখানে বাটন বসবে)
@@ -68,7 +86,14 @@ class _MyBottomNavigationState extends State<MyBottomNavigation> {
                       color: _selectedIndex == 2 ? Colors.black : Colors.grey,
                       size: 28,
                     ),
-                    onPressed: () => setState(() => _selectedIndex = 2),
+                    onPressed: () {
+                      setState(() => _selectedIndex = 2);
+
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => ThirdPage()),
+                      );
+                    },
                   ),
 
                   // আইকন ৪: প্রোফাইল
